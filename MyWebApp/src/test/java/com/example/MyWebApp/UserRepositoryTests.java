@@ -25,8 +25,10 @@ public class UserRepositoryTests {
         user.setFirstName("Kabir");
 
         User saveUser = repo.save(user);
-        MatcherAssert.assertThat(saveUser).isNotNull();
-        MatcherAssert.assertThat(saveUser.getId()).isGraterThan(0);
+        org.assertj.core.api.Assertions.assertThat(saveUser).isNotNull();
+        org.assertj.core.api.Assertions.assertThat(saveUser.getId()).isGreaterThan(0);
+
+
 
     }
 
