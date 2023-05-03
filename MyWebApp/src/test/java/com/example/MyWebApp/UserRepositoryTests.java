@@ -24,6 +24,7 @@ public class UserRepositoryTests {
         user.setFirstName("Hasibul");
         user.setFirstName("Kabir");
 
+//        Used Alternative Method for Assertions For Database
         User saveUser = repo.save(user);
         org.assertj.core.api.Assertions.assertThat(saveUser).isNotNull();
         org.assertj.core.api.Assertions.assertThat(saveUser.getId()).isGreaterThan(0);
