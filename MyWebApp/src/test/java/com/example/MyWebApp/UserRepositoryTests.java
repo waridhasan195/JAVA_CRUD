@@ -19,18 +19,27 @@ public class UserRepositoryTests {
     @Test
     public void testAddNew(){
         User user = new User();
-        user.setEmail("Hasibulkabir@gmail.com");
-        user.setPassword("Ujdj&&8e12");
-        user.setFirstName("Hasibul");
-        user.setFirstName("Kabir");
+        user.setEmail("rayhanmalik@gmail.com");
+        user.setPassword("UE39829J9*1");
+        user.setFirstName("Rayhan");
+        user.setLastName("Malik");
 
 //        Used Alternative Method for Assertions For Database
         User saveUser = repo.save(user);
         org.assertj.core.api.Assertions.assertThat(saveUser).isNotNull();
         org.assertj.core.api.Assertions.assertThat(saveUser.getId()).isGreaterThan(0);
-
-
-
     }
+
+    @Test
+    public void testListAll(){
+        Iterable<User> users = repo.findAll();
+        org.assertj.core.api.Assertions.assertThat(users).hasSizeGreaterThan(0);
+
+
+        for (User user : users){
+            System.out.println(user);
+        }
+    }
+
 
 }
